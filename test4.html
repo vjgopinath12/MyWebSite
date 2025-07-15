@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Buy from Swiggy</title>
+    <link rel="stylesheet" href="../bs/bt/css/bootstrap.css">
+    <style>
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background-color: rgb(245, 242, 85);
+        }
+        div {
+            text-align: center;
+            margin-top: 50px;
+            background-color: rgb(241, 241, 124);
+        }
+        h1 {
+            color: rgb(0, 0, 0);
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+        nav {
+            background-color: rgb(214, 235, 241);
+            padding: 1px;
+        }
+        .card {
+            width: 300px;
+            height: auto;
+            background-color: rgb(255, 255, 255);
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 20px;
+        }
+        img {
+            width: 90%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .quantity-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .quantity {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        span {
+            display: inline-block;
+            margin-top: 10px;
+        }
+        h2 {
+            font-size: 20px;
+            color: rgb(0, 0, 0);
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>🍔Dominos🍔</h1>
+    </nav>
+
+    <!-- Burger Card -->
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3OC8zB1cS8W58061b5Ly6GAs8WR2PfzFfRg&s" alt="Burger Image">
+        <h2>Burger King</h2>
+        <p>Ketchup with me and let's have a 'relish'-ing burger time.</p>
+        <p>Price: &#8377; 199.00</p>
+        <div class="quantity-controls">
+            <button onclick="decqty('burger')">-</button>
+            <span class="quantity" id="burger-quantity">1</span>
+            <button onclick="inqty('burger')">+</button>
+        </div>
+        <span><button onclick="order('Burger', 'burger')">Order Now</button></span>
+    </div>
+
+    <!-- Pizza Card -->
+    <div class="card">
+        <img src="https://media.istockphoto.com/id/1442417585/photo/person-getting-a-piece-of-cheesy-pepperoni-pizza.jpg?s=612x612&w=0&k=20&c=k60TjxKIOIxJpd4F4yLMVjsniB4W1BpEV4Mi_nb4uJU=" alt="Pizza Image">
+        <h2>Pizza Hut</h2>
+        <p>Cheesy bites for a delightful pizza experience.</p>
+        <p>Price: &#8377; 299.00</p>
+        <div class="quantity-controls">
+            <button onclick="decqty('pizza')">-</button>
+            <span class="quantity" id="pizza-quantity">1</span>
+            <button onclick="inqty('pizza')">+</button>
+        </div>
+        <span><button onclick="order('Pizza', 'pizza')">Order Now</button></span>
+    </div>
+
+    <!-- Biryani Card -->
+    <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd1W_5EiG5EAn0QK0QYDT1-LjFD2-YVS4Prw&s" alt="Biryani Image">
+        <h2>Biryani Bliss</h2>
+        <p>Spices and flavors for a royal biryani feast.</p>
+        <p>Price: &#8377; 249.00</p>
+        <div class="quantity-controls">
+            <button onclick="decqty('biryani')">-</button>
+            <span class="quantity" id="biryani-quantity">1</span>
+            <button onclick="inqty('biryani')">+</button>
+        </div>
+        <span><button onclick="order('Biryani', 'biryani')">Order Now</button></span>
+    </div>
+
+    <script>
+        const quantities = {
+            burger: localStorage.getItem('burger') ? parseInt(localStorage.getItem('burger')) : 1,
+            pizza: localStorage.getItem('pizza') ? parseInt(localStorage.getItem('pizza')) : 1,
+            biryani: localStorage.getItem('biryani') ? parseInt(localStorage.getItem('biryani')) : 1
+        };
+
+        document.getElementById('burger-quantity').textContent = quantities.burger;
+        document.getElementById('pizza-quantity').textContent = quantities.pizza;
+        document.getElementById('biryani-quantity').textContent = quantities.biryani;
+
+        function inqty(item) {
+            quantities[item]++;
+            localStorage.setItem(item, quantities[item]);
+            document.getElementById(`${item}-quantity`).textContent = quantities[item];
+        }
+
+        function decqty(item) {
+            if (quantities[item] > 1) {
+                quantities[item]--;
+                localStorage.setItem(item, quantities[item]);
+                document.getElementById(`${item}-quantity`).textContent = quantities[item];
+            }
+        }
+
+        function order(itemName, item) {
+            alert(`Your order for ${quantities[item]} ${itemName}(s) has been placed successfully!`);
+            console.log(`${itemName} order placed for ${quantities[item]} item(s)!`);
+        }
+    </script>
+</body>
+</html>
