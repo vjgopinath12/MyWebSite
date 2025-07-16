@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Forms</title>
+    <style>
+        body {
+            background-color: lightblue;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        legend {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+           
+            <table>
+                <legend>student info</legend>
+                <tr>
+                    <td><label for="">student name</label></td>
+                    <td><input type="text" placeholder="Enter the student name"></td>
+                    <td><label for="">father name</label>
+                    <input type=" text" placeholder="enter the father name"></td>
+                    <td><label for="">mother name</label>
+                    <input type=" text" placeholder="enter the mother name"></td>
+                </tr>
+                <tr>
+                    <td><label for="">date of birth</label></td>
+                    <td><input type="date"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Gender</label></td>
+                    <td><input type="radio" name="radio">male</td>
+                    <td><input type="radio" name="radio">female</td>
+                    <td><input type="radio" name="radio">others</td>
+                </tr>
+                <tr>
+                    <td><label for="">age</label></td>
+                    <td><input type="number" placeholder="enter age"></td>
+                </tr>
+                <tr>
+                    <td><label for="">languages</label></td>
+                            <td><input type="radio">telugu</td>
+                            <td><input type="radio">kannada</td>
+                            <td><input type="radio">english</td>
+                            <td><input type="radio">hindi</td>
+                            <td><input type="radio">thamil</td>
+
+                </tr>
+                <tr>
+                    <td><label for="">states</label></td>
+                    <td><select>
+                        <option value=".......select....."></option>
+                        <option value="">AP</option>
+                        <option value="">TN</option>
+                        <option value="">Kerala</option>
+                        <option value="">Karnataka</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><label for="">address</label></td>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+            <button>submit</button>
+        </fieldset>
+    </form>
+</body>
+</html>

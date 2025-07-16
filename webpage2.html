@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Drop-down</title>
+    <style>
+        a
+        {
+            display: block;
+            color: orange;
+            text-decoration: none;
+        }
+        .child
+        {
+            display: none;
+        }
+        .container
+        {
+            background-color: brown;
+            color: white;
+            width: 80px;
+            position: relative;
+        }
+        .container:hover>.child
+        {
+            display: block  ;
+            background-color: rgb(222, 218, 218);
+            width: 160px;
+            text-align: center;
+            border-radius: 5px;
+            position: absolute;
+            padding: 10px 0px;
+            top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span>Global <i class="bi bi-caret-down-fill"></i></span>
+        <div class="child">
+            <a href="">United Kingdom</a>
+            <a href="">United states</a>
+        </div>
+    </div>
+</body>
+</html>

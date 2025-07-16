@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aqua;
+        }
+        div{
+            height: 100px;
+            width: 100px;
+            border: 2px solid white;
+            animation: changePosition 2s linear 0s 4 forwards;
+            position: relative;
+            background-color: blue;
+        }
+        @keyframes changePosition{
+            0%{
+                top: 0px;
+                left: 0px;
+            }
+            25%{
+                top: 0px;
+                left: 200px;
+            }
+            50%{
+                top: 200px;
+                left: 200px;
+            }
+            75%{
+                top: 200px;
+                left: 0px;
+            }
+            100%{
+                top : 0px;
+                left : 0px;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
